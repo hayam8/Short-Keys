@@ -3,12 +3,7 @@ import shortcutdatabase
 from listener import Listener
 
 eel.init('web')
-shortcut_list = [
-    shortcutdatabase.copy,
-    shortcutdatabase.paste,
-    shortcutdatabase.cut,
-    shortcutdatabase.lockPC
-]
+shortcut_list = shortcutdatabase.getAllShortcuts()
 current_index = -1
 listener = Listener('user_output.txt', shortcut_list)
 @eel.expose

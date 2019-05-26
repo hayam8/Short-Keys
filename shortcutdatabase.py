@@ -96,7 +96,6 @@ def getShortcutDatabaseList():
 # print(moveCursorToURLBar)
 #__listOfShortcuts = getAllShortcuts()
 listOfShortcutsString = '\n'.join(getAllShortcutsString())
-print(listOfShortcutsString)
 #print('\n'.join(listOfShortcutsString))
 # strings = ' '.join(str(listOfShortcuts))
 # print(strings)

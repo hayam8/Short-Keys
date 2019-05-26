@@ -156,3 +156,16 @@ p {
     position: relative;
     z-index: 3;
 }
+
+.left-panel {
+    float: left;
+    width: 60%;
+    height: inherit;
+}
+
+.right-panel {
+    float: left;
+    width: 40%;
+    display: block;
+    height: inherit;
+}
