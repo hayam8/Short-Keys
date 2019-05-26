@@ -1,12 +1,27 @@
 import eel
-import leveldatabase
+import shortcutdatabase
+from listener import Listener
 
 eel.init('web')
+shortcut_list = [
+    shortcutdatabase.copy,
+    shortcutdatabase.paste,
+    shortcutdatabase.cut,
+    shortcutdatabase.lockPC
+]
+current_index = -1
 
 @eel.expose
-def startGame(data):
-    print(data)
-    return "level description"
+def startGame():
+    return getNextLevel()
+
+@eel.expose
+def getNextLevel():
+    global current_index
+    current_index += 1
+    current_shortcut = shortcut_list[current_index]
+    print(current_shortcut.getDescription())
+    return current_shortcut.getDescription()
 
 
-eel.start('index.html', size=(1000, 600))
+eel.start('index.html', size=(1000, 550))

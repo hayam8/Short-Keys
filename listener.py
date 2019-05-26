@@ -1,7 +1,5 @@
 from pynput import keyboard
-from transitions import Machine
 import logging
-from win32gui import GetWindowText, GetForegroundWindow, GetWindowPlacement, GetWindowRect
 import shortcutdatabase
 import shortcut
 from shortcut import Shortcut
@@ -102,7 +100,7 @@ class Listener():
 	def on_release(self, key):
 		if(key == keyboard.Key.esc): # Stops listener
 			return self.stop()
-		window = GetWindowText(GetForegroundWindow())
+		'''window = GetWindowText(GetForegroundWindow())
 		logging.info(window)
 
 		if window == 'Untitled - Notepad':
@@ -111,7 +109,7 @@ class Listener():
 			logging.info(rect[1])  # bottom left
 			logging.info(rect[2])  # top right
 			logging.info(rect[3])  # bottom right
-			logging.info(GetWindowPlacement(GetForegroundWindow()))
+			logging.info(GetWindowPlacement(GetForegroundWindow()))'''
 		try:
 			# check to see if the current list of held down keys match the keys required for the current shortcut
 			if (self.checkCompletedCurrentShortcut(self.__pressed, self.validShortcuts[self.currentShortcut].getKeys())):
@@ -132,8 +130,7 @@ class Listener():
 				logging.info(keys)  # log the completed shortcut to file with timestamp
 
 				self.completedShortcuts.append(self.validShortcuts[self.currentShortcut])
-				self.currentShortcut += 1
-
+				#self.currentShortcut += 1
 		self.__pressed = []	# clear current pressed keys
 		if(self.checkCompleted()):#stops listening once shortcuts have been completed
 			return self.stop()
@@ -158,6 +155,8 @@ class Listener():
 	def start(self):
 		with keyboard.Listener(on_press = self.on_press, on_release = self.on_release) as listener:
 			listener.join()
+		#listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
+		#self.listener.start()
 
 	"""
 	Method that stops the listener once it has been started
@@ -184,6 +183,8 @@ class Listener():
 
 """
 listener tests
-"""
+
 listen = Listener('user_output.txt', [shortcutdatabase.openSearch, shortcutdatabase.maximizeToLeft])
 listen.start()
+print("is it still listening?")
+"""
