@@ -18,24 +18,34 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
-                    <div class="wellcome-heading" id="welcome-heading">
-                        <h2>Short Keys</h2>
-                        <p>Test your keyboard knowledge.</p>
+                    <div id="left" class="left-panel">
+                        <div class="wellcome-heading" id="welcome-heading">
+                            <h2>Short Keys</h2>
+                            <p>Test your keyboard knowledge.</p>
+                        </div>
+                        <div class="level-description" id="level-description" style="display: none">
+                            <h3 id="description-text"></h3>
+                        </div>
+                        <div id="encyclopedia" style="display: none">
+                        </div>
                     </div>
-                    <div class="get-start-area" id="start-area">
-                        <form class="form-inline">
-                            <input type="button" class="submit" value="Start" onclick="startGame()">
-                        </form>
+                    <div id="right" class="right-panel">
+                        <div class="get-start-area" id="start-area">
+                            <form class="form-horizontal">
+                                <form class="form-group">
+                                    <div class="col-sm-10">
+                                        <input type="button" class="submit" value="Start" onclick="startGame()">
+                                    </div>
+                                </form>
+                                <form class="form-group">
+                                    <div class="col-sm-10" style="padding-top: 10px">
+                                        <input type="button" class="submit" value="Shortcut Encyclopedia" onclick="encyclopedia()">
+                                    </div>
+                                </form>
+                            </form>
+                        </div>
                     </div>
-                    <div class="level-description" id="level-description" style="display: none">
-                        <h3 id="description-text"></h3>
-                    </div>
-                    <!--<div class="get-start-area">
-                        <input id="next-button" type="button" class="submit" value="Next" style="display: none" onclick="next()">
-                    </div>-->
-                    <div id = "encyclopedia" >
-                        <input id="enc-button" type="button" class="submit" value="Shortcut Encyclopedia" onclick="encyclopedia()">
-                    </div>
+
                 </div>
             </div>
         </div>

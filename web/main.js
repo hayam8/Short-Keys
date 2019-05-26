@@ -12,7 +12,6 @@ function startGame() {
 
 eel.expose(next);
 function next(){
-    console.log('startGame => js')
     eel.getNextLevel()(displayLevelDescription)
 }
 function displayLevelDescription(description){
@@ -26,6 +25,11 @@ function encyclopedia(){
 
 function displayEncyclopedia(enc){
     var encyclopedia = document.getElementById("encyclopedia")
+    var welcome_heading = document.getElementById("welcome-heading")
+    var start_area = document.getElementById("start-area")
+    welcome_heading.style.display = "none"
+    start_area.style.display = "none"
+    encyclopedia.style.display = "block"
     encyclopedia.innerHTML = enc
 }
 
