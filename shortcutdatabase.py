@@ -82,22 +82,28 @@ def getAllShortcutsString():
         shortcuts.append(shortcutToAdd.getShortcut())
     return shortcuts
 
+def getlistOfShortcutsString():
+    return __listOfShortcutsString
+
 __listOfShortcuts = getAllShortcuts()
+__listOfShortcutsString = '\n'.join(getAllShortcutsString())
 
 def getShortcutDatabaseList():
     return __listOfShortcuts
 
+__listOfShortcutsString = '\n'.join(getAllShortcutsString())
 
+
+# print(__listOfShortcuts)
 # test = getShortcutByName("copy")
 # x = shortcutDB.find_one({"name":"copy"})
 # print(test)
 
 # print(copy)
 # print(moveCursorToURLBar)
-#__listOfShortcuts = getAllShortcuts()
-listOfShortcutsString = '\n'.join(getAllShortcutsString())
-print(listOfShortcutsString)
-#print('\n'.join(listOfShortcutsString))
+# listOfShortcuts = getAllShortcuts()
+# print(listOfShortcutsString)
+# print('\n'.join(listOfShortcutsString))
 # strings = ' '.join(str(listOfShortcuts))
 # print(strings)
 # print(listOfShortcuts)
