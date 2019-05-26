@@ -55,7 +55,6 @@ closeTab = Shortcut(['Ctrl', 'W'], 'Close current tab')
 openPrivateWindow = Shortcut(['Ctrl', 'Shift', 'P'], 'Open a private browser window')
 moveCursorToURLBar = Shortcut(['Ctrl', 'E'], 'Move cursor to URL bar and highlight all text in it')
 
-
 def getShortcutByName(name):
     target = shortcutDB.find_one({"name": name})
     keys = target["keys"]
@@ -83,6 +82,11 @@ def getAllShortcutsString():
         shortcuts.append(shortcutToAdd.getShortcut())
     return shortcuts
 
+__listOfShortcuts = getAllShortcuts()
+
+def getShortcutDatabaseList():
+    return __listOfShortcuts
+
 
 # test = getShortcutByName("copy")
 # x = shortcutDB.find_one({"name":"copy"})
@@ -90,8 +94,7 @@ def getAllShortcutsString():
 
 # print(copy)
 # print(moveCursorToURLBar)
-
-listOfShortcuts = getAllShortcuts()
+#__listOfShortcuts = getAllShortcuts()
 listOfShortcutsString = '\n'.join(getAllShortcutsString())
 print(listOfShortcutsString)
 #print('\n'.join(listOfShortcutsString))
