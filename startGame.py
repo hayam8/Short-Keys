@@ -23,5 +23,10 @@ def getNextLevel():
     print(current_shortcut.getDescription())
     return current_shortcut.getDescription()
 
+@eel.expose
+def getEncyclopedia():
+    return shortcutdatabase.listOfShortcutsString
+
+
 
 eel.start('index.html', size=(1000, 550))
