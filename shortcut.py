@@ -25,6 +25,9 @@ class Shortcut:
     def getHotKey(self):
         return self.__hotKey
 
+    def getShortcut(self):
+        return (self.__hotKey + ' = ' + self.__description)
+
     """
     This method is used when creating an instance of the Shortcut class. 
     This method takes in 0 parameters and uses information from vars in the instance of the object.
