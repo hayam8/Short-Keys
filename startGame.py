@@ -10,9 +10,10 @@ shortcut_list = [
     shortcutdatabase.lockPC
 ]
 current_index = -1
-
+listener = Listener('user_output.txt', shortcut_list)
 @eel.expose
 def startGame():
+    listener.start()
     return getNextLevel()
 
 @eel.expose
@@ -20,7 +21,6 @@ def getNextLevel():
     global current_index
     current_index += 1
     current_shortcut = shortcut_list[current_index]
-    print(current_shortcut.getDescription())
     return current_shortcut.getDescription()
 
 

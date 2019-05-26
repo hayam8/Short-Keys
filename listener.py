@@ -3,7 +3,8 @@ import logging
 import shortcutdatabase
 import shortcut
 from shortcut import Shortcut
-
+import time
+import eel
 """
 Listener object has a start and stop method that controls when the listener is active. It will append any key that is
 being held down to a list for held down keys and when the key is released the list is appended to an output file.
@@ -131,9 +132,10 @@ class Listener():
 
 				self.completedShortcuts.append(self.validShortcuts[self.currentShortcut])
 				#self.currentShortcut += 1
+		eel.next()
 		self.__pressed = []	# clear current pressed keys
-		if(self.checkCompleted()):#stops listening once shortcuts have been completed
-			return self.stop()
+		#if(self.checkCompleted()):#stops listening once shortcuts have been completed
+		#	return self.stop()
 
 	"""
 	Method that takes the list of current pressed keys as a list and compares it to the current pending shortcut task
@@ -142,7 +144,7 @@ class Listener():
 	def checkCompletedCurrentShortcut(self, currentKeys, shortcutToMatchKeys):
 		return currentKeys == shortcutToMatchKeys
 
-	"""
+	""" 
 	This method is used while the listener is active after start() has been called.
 
 	"""
@@ -153,9 +155,10 @@ class Listener():
 	Method to start the Listener
 	"""
 	def start(self):
-		with keyboard.Listener(on_press = self.on_press, on_release = self.on_release) as listener:
-			listener.join()
-		#listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
+		#with keyboard.Listener(on_press = self.on_press, on_release = self.on_release) as listener:
+		#	listener.join()
+		keyboard.Listener(on_press=self.on_press, on_release=self.on_release, suppress=True).start()
+		#listener.start()
 		#self.listener.start()
 
 	"""
@@ -183,8 +186,7 @@ class Listener():
 
 """
 listener tests
-
-listen = Listener('user_output.txt', [shortcutdatabase.openSearch, shortcutdatabase.maximizeToLeft])
-listen.start()
-print("is it still listening?")
 """
+#listen = Listener('user_output.txt', [shortcutdatabase.openSearch, shortcutdatabase.maximizeToLeft])
+#listen.start()
+#print("is it still listening?")

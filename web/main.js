@@ -10,7 +10,7 @@ function startGame() {
     next_button.style.display = "block"
 }
 
-//eel.expose(next);
+eel.expose(next);
 function next(){
     console.log('startGame => js')
     eel.getNextLevel()(displayLevelDescription)
