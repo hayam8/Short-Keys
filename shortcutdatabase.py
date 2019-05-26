@@ -73,17 +73,32 @@ def getAllShortcuts():
         shortcuts.append(shortcutToAdd)
     return shortcuts
 
+def getAllShortcutsString():
+    # collection = client.db.shortcutDB #mongoDB database collection
+    shortcuts = []  # list of shortcuts to be returned
+    for entry in shortcutDB.find():
+        keys = entry["keys"]
+        description = entry["description"]
+        shortcutToAdd = Shortcut(keys, description)
+        shortcuts.append(shortcutToAdd.getShortcut())
+    return shortcuts
 
-#test = getShortcutByName("copy")
-#x = shortcutDB.find_one({"name":"copy"})
-#print(test)
 
-#print(copy)
-#print(moveCursorToURLBar)
+# test = getShortcutByName("copy")
+# x = shortcutDB.find_one({"name":"copy"})
+# print(test)
+
+# print(copy)
+# print(moveCursorToURLBar)
 
 listOfShortcuts = getAllShortcuts()
-#print(listOfShortcuts)
-#for i in listOfShortcuts:
+listOfShortcutsString = '\n'.join(getAllShortcutsString())
+print(listOfShortcutsString)
+#print('\n'.join(listOfShortcutsString))
+# strings = ' '.join(str(listOfShortcuts))
+# print(strings)
+# print(listOfShortcuts)
+# for i in listOfShortcuts:
 #    print(i)
 # shortcut tests
 # selectAll.__description = "nothing"
