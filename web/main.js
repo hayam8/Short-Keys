@@ -19,3 +19,13 @@ function displayLevelDescription(description){
     var description_text = document.getElementById("description-text")
     description_text.innerHTML = description;
 }
+
+function encyclopedia(){
+    eel.getEncyclopedia()(displayEncyclopedia)
+}
+
+function displayEncyclopedia(enc){
+    var encyclopedia = document.getElementById("encyclopedia")
+    encyclopedia.innerHTML = enc
+}
+
