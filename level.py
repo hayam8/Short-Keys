@@ -13,7 +13,7 @@ class Level:
         self.name = name
         self.instructions = des
         self.validShortcuts = []
-        self.validActions = actions
+        self.validActions = actions # any action sent in by constructor
         self.timeLimit = limit
         self.setValidShortcuts(actions)
         self.numTargetActions = len(self.validShortcuts)
@@ -44,6 +44,9 @@ class Level:
             if(i != (len(self.validShortcuts) - 1)):
                 shortcuts.append("\n")
         return ''.join(shortcuts)
+
+    def getAllActions(self):
+        return self.validActions
 
     def getValidActions(self):
         actions = []

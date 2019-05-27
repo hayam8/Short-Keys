@@ -20,7 +20,7 @@ def getNextLevel():
 
 @eel.expose
 def getEncyclopedia():
-    return shortcutdatabase.listOfShortcutsString
+    return shortcutdatabase.getlistOfShortcutsString()
 
 
 
