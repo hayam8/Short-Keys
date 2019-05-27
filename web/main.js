@@ -33,3 +33,6 @@ function displayEncyclopedia(enc){
     encyclopedia.innerHTML = enc
 }
 
+function startLevels(){
+    eel.startLevels()
+}
