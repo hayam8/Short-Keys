@@ -30,7 +30,21 @@ function displayEncyclopedia(enc){
     welcome_heading.style.display = "none"
     start_area.style.display = "none"
     encyclopedia.style.display = "block"
-    encyclopedia.innerHTML = enc
+    var tbody = document.createElement("tbody")
+    document.getElementById("tab").appendChild(tbody)
+
+    for(var i =0; i < enc[0].length; i++){
+        var tr = document.createElement("tr")
+        var td_left = document.createElement("td")
+        var td_right = document.createElement("td")
+        var key = document.createTextNode(enc[0][i])
+        var desc = document.createTextNode(enc[1][i])
+        td_left.appendChild(key)
+        td_right.appendChild(desc)
+        tr.appendChild(td_left)
+        tr.appendChild(td_right)
+        tbody.appendChild(tr)
+    }
 }
 
 function startLevels(){

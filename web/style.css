@@ -8,7 +8,8 @@
 
 body {
     font-family: 'Cabin', sans-serif;
-    background-color: #fff;
+    background-image: url(images/linear_gradien_bg.png);
+    height: 100%;
 }
 
 h1,
@@ -47,11 +48,10 @@ p {
 }
 
 .wellcome_area {
-    background-image: url(images/linear_gradien_bg.png);
-    height: 500px;
+    height: 641px;
     position: relative;
     z-index: 1;
-    background-position: bottom center;
+    background-position: bottom right;
     background-size: cover;
 }
 
@@ -160,12 +160,12 @@ p {
 .left-panel {
     float: left;
     width: 60%;
-    height: inherit;
+    height: 100%;
 }
 
 .right-panel {
     float: left;
     width: 40%;
     display: block;
-    height: inherit;
+    height: 100%;
 }
